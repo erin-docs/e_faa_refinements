@@ -10,7 +10,11 @@ datagroup: e_faa_refinements_default_datagroup {
 
 persist_with: e_faa_refinements_default_datagroup
 
-explore: accidents {}
+explore: flights_extended {
+  label: "Flights"
+}
+
+explore: flights {}
 
 explore: aircraft {
   join: aircraft_types {
@@ -65,3 +69,11 @@ explore: ontime {}
 explore: states {}
 
 explore: zipcodes {}
+
+
+view: +flights {
+  dimension: air_carrier {
+    type: string
+    sql: ${TABLE}.air_carrier ;;
+  }
+}
