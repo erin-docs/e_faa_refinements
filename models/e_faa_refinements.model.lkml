@@ -16,6 +16,7 @@ explore: flights_extended {
 
 explore: flights {}
 
+
 explore: aircraft {
   join: aircraft_types {
     type: left_outer
@@ -30,11 +31,19 @@ explore: aircraft {
   }
 }
 
-
 explore: +aircraft {
   label: "Aircraft Simplified"
   fields: [aircraft.aircraft_serial, aircraft.name, aircraft.count]
 }
+
+
+
+
+
+
+
+
+
 
 explore: aircraft_engine_types {}
 
