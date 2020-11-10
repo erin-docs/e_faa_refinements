@@ -18,6 +18,7 @@ explore: flights {}
 
 
 explore: aircraft {
+  view_name:aircraft
   join: aircraft_types {
     type: left_outer
     sql_on: ${aircraft.aircraft_type_id} =
@@ -33,16 +34,26 @@ explore: aircraft {
   }
 }
 
-explore: +aircraft {
-  label: "Aircraft Simplified"
-  fields: [aircraft.aircraft_serial,
-    aircraft.name, aircraft.count]
+
+explore: aircraft_extended {
+  extends: [aircraft]
+  label: "Aircraft Extended"
 }
 
 
 
 
 
+
+
+
+
+
+# explore: +aircraft {
+#   label: "Aircraft Simplified"
+#   fields: [aircraft.aircraft_serial,
+#     aircraft.name, aircraft.count]
+# }
 
 
 
