@@ -30,6 +30,12 @@ explore: aircraft {
   }
 }
 
+
+explore: +aircraft {
+  label: "Aircraft Simplified"
+  fields: [aircraft.aircraft_serial, aircraft.name, aircraft.count]
+}
+
 explore: aircraft_engine_types {}
 
 explore: aircraft_engines {
