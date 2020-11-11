@@ -10,10 +10,6 @@ datagroup: e_faa_refinements_default_datagroup {
 
 persist_with: e_faa_refinements_default_datagroup
 
-explore: flights_extended {
-  label: "Flights"
-}
-
 explore: flights {}
 
 
@@ -33,7 +29,6 @@ explore: aircraft {
     relationship: many_to_one
   }
 }
-
 
 explore: aircraft_extended {
   extends: [aircraft]
