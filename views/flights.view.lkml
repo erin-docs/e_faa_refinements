@@ -7,6 +7,23 @@ view: flights {
     type: number
     sql: ${TABLE}.id ;;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #
 #   dimension: accident_number {
 #     type: string

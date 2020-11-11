@@ -101,3 +101,8 @@ view: +flights {
     sql: ${TABLE}.air_carrier ;;
   }
 }
+
+view: +flights {
+  label: "refined flights"
+  final: yes
+  }
