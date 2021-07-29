@@ -55,20 +55,20 @@ view: flights {
 #     sql: ${TABLE}.engine_type ;;
 #   }
 #
-#   dimension_group: event {
-#     type: time
-#     timeframes: [
-#       raw,
-#       time,
-#       date,
-#       week,
-#       month,
-#       quarter,
-#       year
-#     ]
-#     sql: ${TABLE}.event_date ;;
-#   }
-#
+  dimension_group: event {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.event_date ;;
+  }
+
 #   dimension: event_id {
 #     type: string
 #     sql: ${TABLE}.event_id ;;
@@ -178,8 +178,8 @@ view: flights {
 #     sql: ${TABLE}.weather_condition ;;
 #   }
 #
-#   measure: count {
-#     type: count
-#     drill_fields: [id, airport_name]
-#   }
+  measure: count {
+    type: count
+    drill_fields: [id]
+  }
 }
