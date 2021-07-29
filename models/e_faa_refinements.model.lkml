@@ -10,25 +10,49 @@ datagroup: e_faa_refinements_default_datagroup {
 
 persist_with: e_faa_refinements_default_datagroup
 
-explore: flights_extended {
-  label: "Flights"
-}
-
 explore: flights {}
 
+
 explore: aircraft {
+  view_name:aircraft
   join: aircraft_types {
     type: left_outer
-    sql_on: ${aircraft.aircraft_type_id} = ${aircraft_types.aircraft_type_id} ;;
+    sql_on: ${aircraft.aircraft_type_id} =
+    ${aircraft_types.aircraft_type_id} ;;
     relationship: many_to_one
   }
 
   join: aircraft_engine_types {
     type: left_outer
-    sql_on: ${aircraft.aircraft_engine_type_id} = ${aircraft_engine_types.aircraft_engine_type_id} ;;
+    sql_on: ${aircraft.aircraft_engine_type_id} =
+    ${aircraft_engine_types.aircraft_engine_type_id} ;;
     relationship: many_to_one
   }
 }
+
+explore: aircraft_extended {
+  extends: [aircraft]
+  label: "Aircraft Extended"
+}
+
+
+
+
+
+
+
+
+
+
+# explore: +aircraft {
+#   label: "Aircraft Simplified"
+#   fields: [aircraft.aircraft_serial,
+#     aircraft.name, aircraft.count]
+# }
+
+
+
+
 
 explore: aircraft_engine_types {}
 
@@ -77,3 +101,8 @@ view: +flights {
     sql: ${TABLE}.air_carrier ;;
   }
 }
+
+view: +flights {
+  label: "refined flights"
+  final: yes
+  }

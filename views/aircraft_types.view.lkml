@@ -15,6 +15,9 @@ view: aircraft_types {
 
   measure: count {
     type: count
-    drill_fields: [aircraft_type_id, aircraft.count, aircraft_models.count]
   }
+}
+
+view: +aircraft_types {
+  label: "refined aircraft types"
 }

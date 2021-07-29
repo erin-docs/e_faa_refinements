@@ -75,6 +75,7 @@ view: ontime {
   }
 
   dimension: id2 {
+    primary_key: yes
     type: number
     sql: ${TABLE}.id2 ;;
   }
@@ -103,4 +104,8 @@ view: ontime {
     type: count
     drill_fields: []
   }
+}
+
+view: +ontime {
+  label: "refined ontime"
 }
