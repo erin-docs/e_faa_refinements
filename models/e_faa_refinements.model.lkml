@@ -4,7 +4,7 @@ connection: "faa"
 include: "/views/**/*.view"
 
 datagroup: e_faa_refinements_default_datagroup {
-  sql_trigger: SELECT DATE();;
+  sql_trigger: SELECT DATE(NOW());;
   max_cache_age: "1 hour"
 }
 
