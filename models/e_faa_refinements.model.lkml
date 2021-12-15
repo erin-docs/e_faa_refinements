@@ -4,7 +4,7 @@ connection: "faa"
 include: "/views/**/*.view"
 
 datagroup: e_faa_refinements_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  sql_trigger: SELECT DATE(NOW());;
   max_cache_age: "1 hour"
 }
 
@@ -12,7 +12,7 @@ persist_with: e_faa_refinements_default_datagroup
 
 explore: flights {}
 
-
+explore: e_faa_incr_pdt {}
 explore: aircraft {
   view_name:aircraft
   join: aircraft_types {
@@ -34,20 +34,6 @@ explore: aircraft_extended {
   extends: [aircraft]
   label: "Aircraft Extended"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # explore: +aircraft {
 #   label: "Aircraft Simplified"
