@@ -9,6 +9,7 @@ explore: +flights {
   }
 }
 
+
 view: distance_stats {
   derived_table: {
     explore_source: flights {
