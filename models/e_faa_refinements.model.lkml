@@ -2,6 +2,7 @@ connection: "faa"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/analysis_refinements/refinements_test.lkml"
 
 datagroup: e_faa_refinements_default_datagroup {
   sql_trigger: SELECT DATE(NOW());;
@@ -10,7 +11,13 @@ datagroup: e_faa_refinements_default_datagroup {
 
 persist_with: e_faa_refinements_default_datagroup
 
-explore: flights {}
+explore: flights {
+  join: ontime {
+    type: left_outer
+    sql_on: ${ontime.id2} = ${flights.id} ;;
+    relationship: one_to_one
+  }
+}
 
 explore: e_faa_incr_pdt {}
 explore: aircraft {
@@ -93,7 +100,7 @@ view: +flights {
   }
 }
 
-view: +flights {
-  label: "refined flights"
-  final: yes
-  }
+# view: +flights {
+#   label: "refined flights"
+#   final: yes
+#   }
