@@ -44,6 +44,11 @@ explore: aircraft_extended {
 
 
 
+
+
+
+
+
 # explore: +aircraft {
 #   label: "Aircraft Simplified"
 #   fields: [aircraft.aircraft_serial,

@@ -24,6 +24,23 @@ view: flights {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #
 #   dimension: accident_number {
 #     type: string
@@ -200,3 +217,6 @@ view: flights {
     drill_fields: [id]
   }
 }
+
+
+view: +flights {}
